@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/backgroundColor">
+
+    <ImageView
+        android:id="@+id/lineRouteImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/line_ico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/card"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginTop"
+        android:layout_marginLeft="@dimen/marginLeftRight"
+        android:layout_marginRight="@dimen/marginLeftRight"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rounded_card">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/routeCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/backgroundColor"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/small_circle1_ico"
+                        app:layout_constraintBottom_toBottomOf="@+id/addressFromTextView"
+                        app:layout_constraintEnd_toStartOf="@+id/addressFromTextView"
+                        app:layout_constraintTop_toTopOf="@+id/addressFromTextView" />
+
+                    <TextView
+                        android:id="@+id/addressFromTextView"
+                        style="@style/CustomT2TextView."
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/myLocation"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/small_circle2_ico"
+                        app:layout_constraintBottom_toBottomOf="@+id/addressToTextView"
+                        app:layout_constraintEnd_toStartOf="@+id/addressToTextView"
+                        app:layout_constraintTop_toTopOf="@+id/addressToTextView" />
+
+                    <TextView
+                        android:id="@+id/addressToTextView"
+                        style="@style/CustomT2TextView."
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/myLocation"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/editRouteImageButton"
+                    android:layout_width="@dimen/heightOfSearchEditText"
+                    android:layout_height="@dimen/heightOfSearchEditText"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/rounded_button"
+                    android:src="@drawable/edit_ico" />
+
+                <ImageButton
+                    android:id="@+id/cancelRouteImageButton"
+                    android:layout_width="@dimen/heightOfSearchEditText"
+                    android:layout_height="@dimen/heightOfSearchEditText"
+                    android:background="@drawable/rounded_button"
+                    android:src="@drawable/cross_ico" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/filterButtonWhenRoute"
+        android:layout_width="@dimen/heightOfSearchEditText"
+        android:layout_height="@dimen/heightOfSearchEditText"
+        app:layout_constraintTop_toBottomOf="@+id/card"
+        app:layout_constraintStart_toStartOf="@+id/card"
+        android:layout_marginTop="@dimen/marginTop"
+        android:src="@drawable/filter_ico"
+        android:background="@drawable/rounded_button"
+        />
+
+    <ImageButton
+        android:id="@+id/goButton"
+        style="@style/CustomActionButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/heightOfSearchEditText"
+        android:layout_marginTop="@dimen/marginTop"
+        app:layout_constraintWidth_percent="0.3"
+        android:background="@drawable/rounded_button"
+        android:text="@string/go"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filterButtonWhenRoute"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/human_32_ico"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    >
+
+    <EditText
+        android:id="@+id/addressToEditText"
+        style="@style/CustomEditText."
+        android:layout_width="0dp"
+        android:layout_height="@dimen/heightOfSearchEditText"
+        android:layout_marginTop="@dimen/marginTop"
+        android:layout_marginLeft="@dimen/marginLeftRight"
+        android:layout_marginRight="@dimen/marginLeftRight"
+        android:background="@drawable/rounded_edittext"
+        android:hint="@string/search"
+        android:inputType="text"
+        android:padding="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/moreButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/lineImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/line_ico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/clearSearchAddressToImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/addressToEditText"
+        app:layout_constraintBottom_toBottomOf="@+id/addressToEditText"
+        app:layout_constraintEnd_toEndOf="@+id/addressToEditText"
+        android:src="@drawable/cross_small_ico"
+        android:layout_marginRight="5dp"
+        android:visibility="invisible"
+        />
+
+    <ImageButton
+        android:id="@+id/moreButton"
+        android:layout_width="@dimen/heightOfSearchEditText"
+        android:layout_height="@dimen/heightOfSearchEditText"
+        android:layout_marginTop="@dimen/marginTop"
+        android:layout_marginRight="@dimen/marginLeftRight"
+        android:background="@drawable/rounded_button"
+        android:src="@drawable/more_ico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/filterButton"
+        android:src="@drawable/filter_ico"
+        android:layout_width="@dimen/heightOfSearchEditText"
+        android:layout_height="@dimen/heightOfSearchEditText"
+        android:layout_marginTop="@dimen/marginTop"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintStart_toStartOf="@+id/addressToEditText"
+        app:layout_constraintTop_toBottomOf="@+id/addressToEditText" />
+
+    <ImageView
+        android:id="@+id/reklamaImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filterButton"
+        android:layout_marginTop="@dimen/marginTop"
+        android:src="@drawable/reklama"
+        android:background="@color/primaryElementsColor"
+        android:padding="5dp"
+        android:paddingVertical="5dp"
+        />
+    <ImageView
+        android:id="@+id/reklamaImageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/reklamaImageView"
+        app:layout_constraintTop_toBottomOf="@+id/filterButton"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="@dimen/marginTop"
+        android:src="@drawable/reklama"
+        android:background="@color/primaryElementsColor"
+        android:paddingVertical="5dp"
+        />
+
+    <TextView
+        android:id="@+id/recentlySearchedTextView"
+        style="@style/CustomPrimaryTextView."
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="@string/recently_searched"
+        app:layout_constraintStart_toStartOf="@+id/filterButton"
+        app:layout_constraintTop_toBottomOf="@+id/reklamaImageView"
+        android:layout_marginTop="@dimen/marginTop"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recentlySearchedRecycleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginTop"
+        app:layout_constraintEnd_toEndOf="@+id/moreButton"
+        app:layout_constraintStart_toStartOf="@+id/addressToEditText"
+        app:layout_constraintTop_toBottomOf="@+id/recentlySearchedTextView"
+        android:nestedScrollingEnabled="true"
+        />
+
+    <TextView
+        android:id="@+id/favouritesTextView"
+        style="@style/CustomPrimaryTextView."
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="@dimen/marginTop"
+        android:text="@string/favourites"
+        app:layout_constraintStart_toStartOf="@+id/filterButton"
+        app:layout_constraintTop_toBottomOf="@+id/recentlySearchedRecycleView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/favouritesRecycleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginTop"
+        app:layout_constraintEnd_toEndOf="@+id/moreButton"
+        app:layout_constraintStart_toStartOf="@+id/addressToEditText"
+        app:layout_constraintTop_toBottomOf="@+id/favouritesTextView"
+        />
+
+<!--    Показывает когда пишется текст в поисковик -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchedRecycleViewWhenSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/moreButton"
+        app:layout_constraintStart_toStartOf="@+id/addressToEditText"
+        app:layout_constraintTop_toBottomOf="@+id/filterButton"
+        android:visibility="gone"
+        android:nestedScrollingEnabled="true"
+        android:layout_marginTop="@dimen/marginTop"
+        />
+
+    <ImageButton
+        android:id="@+id/filterButtonWhenSearch"
+        android:src="@drawable/filter_ico"
+        android:layout_width="@dimen/heightOfSearchEditText"
+        android:layout_height="@dimen/heightOfSearchEditText"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintStart_toStartOf="@+id/moreButton"
+        app:layout_constraintTop_toTopOf="@+id/moreButton"
+        android:visibility="invisible"/>
+
+    <!--    Показывает когда пишется текст в поисковик -->
+
+    <include
+        android:id="@+id/departmentInfoIncludedLayout"
+        layout="@layout/department_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+
+<!--    <Button-->
+<!--        android:id="@+id/callAssistantButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="@dimen/heightOfSearchEditText"-->
+<!--        android:layout_marginLeft="@dimen/marginLeftRight"-->
+<!--        android:text="@string/assistant"-->
+<!--        style="@style/CustomActionButtonAssistant"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/filterButton"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/filterButton" />-->
+
+    <include
+        android:id="@+id/routeIncludedLayout"
+        layout="@layout/route_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

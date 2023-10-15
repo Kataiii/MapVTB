@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">VTBapiApp</string>
+    <string name="title_activity_adapter" translatable="false">adapterActivity</string>
+    <string name="search">Поиск</string>
+    <string name="recently_searched">Недавно искали</string>
+    <string name="favourites">Избранное</string>
+    <string name="address">Адрес</string>
+    <string name="contacts">Контакты</string>
+    <string name="working_hours">Время работы</string>
+    <string name="work_shedule">График работы</string>
+    <string name="load">Загруженность</string>
+    <string name="route">Маршрут</string>
+    <string name="cancel">Сбросить</string>
+    <string name="myLocation">Моё местоположение</string>
+    <string name="go">Поехали</string>
+    <string name="where">Куда</string>
+    <string name="assistant_terenty">Помощник Терентий</string>
+    <string name="assistant">Помощник</string>
+    <string name="write_your_question">Напишите свой вопрос</string>
+    <string name="back">Назад</string>
+    <string name="settings">Настройки</string>
+    <string name="list_of_cities">Список городов</string>
+</resources>

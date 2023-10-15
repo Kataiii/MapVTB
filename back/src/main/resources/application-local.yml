@@ -1,0 +1,44 @@
+server:
+  port: 8080
+  servlet:
+    #    context-path: /api/ws
+    session:
+      timeout: 604800s
+      cookie:
+        max-age: 604800s
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+dev-auth: true
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/test
+    username: postgres
+    password: gst135bce
+  liquibase:
+    change-log: classpath:liquibase/db.changelog-master.xml
+
+    drop-first: false
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+    jpa:
+      show-sql: true
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+jwt:
+  secret:
+    access: qBTmv4oXFFR2GwjexDJ4t6fsIUIUhhXqlktXjXdkcyygs8nPVEwMfo29VDRRepYDVV5IkIxBMzr7OEHXEHd37w==
+    refresh: zL1HB3Pch05Avfynovxrf/kpF9O2m4NCWKJUjEp27s9J2jEG3ifiKCGylaZ8fDeoONSTJP/wAzKawB8F9rOMNg==
+gpt:
+  user: tu4wggkm8lczgdzqs
+  create: https://chat.chatgptdemo.net/new_chat
+  delete: https://chat.chatgptdemo.net/delete_chat
+  send: https://chat.chatgptdemo.net/chat_api_stream
+bank:
+  max-load: 50
+  register-time:
+    min: 10
